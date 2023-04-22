@@ -17,6 +17,13 @@ const CustomButton = ({type,title,customStyles,handleClick}) => {
             color: snap.color
           }
         }
+        else if(type === "fixed"){
+          return{
+            borderWidth: '3px',
+            borderColor: '#EFBD48',
+            color: 'white',
+          }
+        }
           // else if(type=== "specific"){
           //   return{
           //     backgroundColor:

@@ -158,7 +158,7 @@ alert(error)
             {...fadeAnimation}
           >
             <CustomButton
-              type="filled"
+              type="fixed"
               title="Go Back"
               handleClick={() => state.intro = true}
               customStyles="W-fit px-4 py-2.5 font-bold text-sm"
