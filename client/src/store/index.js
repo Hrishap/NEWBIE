@@ -4,7 +4,7 @@ intro: true,
 color:'#EFBD48',
 isLogoTexture:true,
 isFullTexture:false,
-logoDecal: './threejs.png',
-fullDecal: './threejs.png',
+logoDecal: './eagle.png',
+fullDecal: './eagle.png',
 });
 export default state;

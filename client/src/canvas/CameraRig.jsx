@@ -33,6 +33,7 @@ const CameraRig = ({ children}) => {
             0.25,
             delta
             )
+            group.current.rotation.y += delta * 0.5;
     })
 
 
