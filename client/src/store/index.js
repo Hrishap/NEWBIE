@@ -6,5 +6,6 @@ isLogoTexture:true,
 isFullTexture:false,
 logoDecal: './eagle.png',
 fullDecal: './eagle.png',
+sleeve: false,
 });
 export default state;
