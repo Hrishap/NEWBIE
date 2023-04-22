@@ -1,28 +1,32 @@
-import React,{Suspense} from 'react';
+import React from 'react';
 import { easing } from 'maath';
 import { useSnapshot } from 'valtio';
-import { useFrame ,Canvas} from '@react-three/fiber';
-import { OrbitControls,Preload, Decal, useGLTF, useTexture } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
+import { Decal, useGLTF, useTexture } from '@react-three/drei';
 import state from '../store';
 
-
 const Shirt = () => {
+    let shirt=1;
     const snap = useSnapshot(state);
-    const { nodes, materials } = useGLTF('/shirt_baked.glb');
+    if(state.sleeve===true){
+        var { nodes, materials } = useGLTF('/shirt_baked.glb');
+    }else{
+        var { nodes, materials } = useGLTF('/full_sleeve.glb');
+    }
+    
 
     const logoTexture = useTexture(snap.logoDecal);
     const fullTexture = useTexture(snap.fullDecal);
-    useFrame((state, delta) =>{
-        nodes.T_Shirt_male.rotation.y+=delta*0.5;
-        easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)});
+    useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
      const stateString=JSON.stringify(snap);
+
+     if(state.sleeve===true){
 
     return (
         <group
         key={stateString}
         >
             <mesh
-          
                 castShadow
                 geometry={nodes.T_Shirt_male.geometry}
                 material={materials.lambert1}
@@ -39,9 +43,9 @@ const Shirt = () => {
                 )}
                 {snap.isLogoTexture && (
                     <Decal
-                        position={[0.06, 0.09, 0.15]}
+                        position={[0, 0.04, 0.15]}
                         rotation={[0, 0, 0]}
-                        scale={0.07}
+                        scale={0.15}
                         map={logoTexture}
                         map-anisotropy={16}
                         depthTest={false}
@@ -51,6 +55,47 @@ const Shirt = () => {
             </mesh>
         </group>
     )
+}else{
+    return (
+        <group
+        key={stateString}
+        >
+            <mesh
+                castShadow
+                geometry={nodes.T_Shirt_male.geometry}
+                material={materials.lambert1}
+                material-roughness={1}
+                dispose={null}
+                rotation={[90,0,0]}
+                scale={[0.03,0.03,0.03]}
+            >
+                {snap.isFullTexture && (
+                    <Decal
+                        position={[0, 0, 0]}
+                        // rotation={[0, 0, 0]}
+                        rotation={[-90,0,0]}
+                        // scale={1}
+                        scale={[30,30,30]}
+                        map={fullTexture}
+                    />
+                )}
+                {snap.isLogoTexture && (
+                    <Decal
+                        position={[0, 0.04, 0.15]}
+                        // rotation={[0, 0, 0]}
+                        rotation={[-90,0,0]}
+                        // scale={0.15}
+                        scale={[6,6,11]}
+                        map={logoTexture}
+                        map-anisotropy={16}
+                        depthTest={false}
+                        depthWrite={true}
+                    />
+                )}
+            </mesh>
+        </group>
+    )
+}
 }
 
 export default Shirt
