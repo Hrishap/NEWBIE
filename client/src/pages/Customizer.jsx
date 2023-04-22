@@ -6,7 +6,7 @@ import state from "../store";
 import { download } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers";
 import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
-// import closeImage from "../assets/close.png";
+import closeImage from "../assets/close.png";
 import { fadeAnimation, slideAnimation } from "../config/motion";
 import {
   CustomButton,
@@ -36,7 +36,7 @@ const Customizer = () => {
         return (
           <>
             <ColorPicker />
-            <button className="close-btn" onClick={() => setActiveEditorTab("")}>X</button>
+            <button className="close-btn" onClick={() => setActiveEditorTab("")}><img className="w-6 h-6 shadow-sm" src={closeImage} alt="X"/></button>
           </>
         );
       case "filepicker":
@@ -47,7 +47,7 @@ const Customizer = () => {
               setFile={setFile}
               readFile={readFile}
             />
-            <button className="close-btn" onClick={() => setActiveEditorTab("")}>X</button>
+            <button className="close-btn" onClick={() => setActiveEditorTab("")}><img className="w-6 h-6 shadow-sm" src={closeImage} alt="X" /></button>
           </>
         );
       case "aipicker":
@@ -59,7 +59,7 @@ const Customizer = () => {
               generatingImg={generatingImg}
               handleSubmit={handleSubmit}
             />
-            <button className="close-btn" onClick={() => setActiveEditorTab("")}>X</button>
+            <button className="close-btn" onClick={() => setActiveEditorTab("")}><img className="w-6 h-6 shadow-sm" src={closeImage} alt="X"/></button>
           </>
         );
       default:
