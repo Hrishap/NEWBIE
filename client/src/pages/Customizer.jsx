@@ -4,6 +4,8 @@ import { useSnapshot } from "valtio";
 import config from "../config/config";
 import state from "../store";
 import { download } from "../assets";
+import { tshirt } from "../assets";
+import { sweatshirt } from "../assets";
 import { downloadCanvasToImage, reader } from "../config/helpers";
 import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
 import closeImage from "../assets/close.png";
@@ -177,6 +179,20 @@ alert(error)
                 handleClick={() => handleActiveFilterTab(tab.name)}
                  />
             ))}
+            <button className='download-btn' onClick={()=>{state.sleeve=true}}>
+              <img
+                src={tshirt}
+                alt='sleeve_changer'
+                className='w-3/5 h-3/5 object-contain'
+              />
+            </button>
+            <button className='download-btn' onClick={()=>{state.sleeve=false}}>
+              <img
+                src={sweatshirt}
+                alt='sleeve_changer'
+                className='w-3/5 h-3/5 object-contain'
+              />
+            </button>
             <button className='download-btn' onClick={downloadCanvasToImage}>
               <img
                 src={download}
