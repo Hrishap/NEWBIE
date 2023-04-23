@@ -12,6 +12,10 @@ import { leftArrow } from "../assets";
 import { rightArrow } from "../assets";
 import { plus } from "../assets";
 import { minus } from "../assets";
+
+import { save } from "../assets";
+import { undo } from "../assets";
+
 import { downloadCanvasToImage, reader } from "../config/helpers";
 import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
 import closeImage from "../assets/close.png";
@@ -254,6 +258,85 @@ alert(error)
                 className='w-3/5 h-3/5 object-contain'
               />
             </button>
+
+            <button className='download-btn' onClick={()=>{
+              if(state.noOfSaved===0){
+                state.fixed1=true;
+                state.logoDecal1=state.logoDecal;
+                state.x1Cordinate=state.xCordinate;
+                state.y1Cordinate=state.yCordinate;
+                state.size1Cordinate=state.sizeCordinate;
+                state.noOfSaved++;
+              }else if(state.noOfSaved===1){
+                state.fixed2=true;
+                state.logoDecal2=state.logoDecal;
+                state.x2Cordinate=state.xCordinate;
+                state.y2Cordinate=state.yCordinate;
+                state.size2Cordinate=state.sizeCordinate;
+                state.noOfSaved++;
+              }else if(state.noOfSaved===2){
+                state.fixed3=true;
+                state.logoDecal3=state.logoDecal;
+                state.x3Cordinate=state.xCordinate;
+                state.y3Cordinate=state.yCordinate;
+                state.size3Cordinate=state.sizeCordinate;
+                state.noOfSaved++;
+              }else if(state.noOfSaved===3){
+                state.fixed4=true;
+                state.logoDecal4=state.logoDecal;
+                state.x4Cordinate=state.xCordinate;
+                state.y4Cordinate=state.yCordinate;
+                state.size4Cordinate=state.sizeCordinate;
+                state.noOfSaved++;
+              }
+            }}>
+              <img
+                src={save}
+                alt='save_it'
+                className='w-3/5 h-3/5 object-contain'
+              />
+            </button>
+
+            <button className='download-btn' onClick={()=>{
+              if(state.noOfSaved===1){
+                state.fixed1=false;
+                state.logoDecal1='./eagle.png';
+                state.x1Cordinate=0;
+                state.y1Cordinate=0;
+                state.size1Cordinate=0;
+                state.noOfSaved--;
+              }else if(state.noOfSaved===2){
+                state.fixed2=false;
+                state.logoDecal2='./eagle.png';
+                state.x2Cordinate=0;
+                state.y2Cordinate=0;
+                state.size2Cordinate=0;
+                state.noOfSaved--;
+              }else if(state.noOfSaved===3){
+                state.fixed3=false;
+                state.logoDecal3='./eagle.png';
+                state.x3Cordinate=0;
+                state.y3Cordinate=0;
+                state.size3Cordinate=0;
+                state.noOfSaved--;
+              }else if(state.noOfSaved===4){
+                state.fixed4=false;
+                state.logoDecal4='./eagle.png';
+                state.x4Cordinate=0;
+                state.y4Cordinate=0;
+                state.size4Cordinate=0;
+                state.noOfSaved--;
+              }
+            }}>
+              <img
+                src={undo}
+                alt='save_it'
+                className='w-3/5 h-3/5 object-contain'
+              />
+            </button>
+
+
+
           </motion.div>
           
           

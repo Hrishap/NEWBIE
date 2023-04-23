@@ -13,6 +13,10 @@ const Shirt = () => {
         var { nodes, materials } = useGLTF('/full_sleeve.glb');
     }
     const logoTexture = useTexture(snap.logoDecal);
+    const logoTexture1 = useTexture(snap.logoDecal1);
+    const logoTexture2 = useTexture(snap.logoDecal2);
+    const logoTexture3 = useTexture(snap.logoDecal3);
+    const logoTexture4 = useTexture(snap.logoDecal4);
     const fullTexture = useTexture(snap.fullDecal);
     useFrame((state, delta) => easing.dampC(materials.lambert1.color, snap.color, 0.25, delta));
      const stateString=JSON.stringify(snap);
@@ -31,6 +35,50 @@ const Shirt = () => {
                 dispose={null}
                 
             >
+                {snap.fixed1 && (
+                    <Decal
+                        position={[0+state.x1Cordinate, 0+state.y1Cordinate, 0.15]}
+                        rotation={[0, 0, 0]}
+                        scale={0.07+state.size1Cordinate}
+                        map={logoTexture1}
+                        map-anisotropy={16}
+                        depthTest={false}
+                        depthWrite={true}
+                    />
+                )}
+                {snap.fixed2 && (
+                    <Decal
+                        position={[0+state.x2Cordinate, 0+state.y2Cordinate, 0.15]}
+                        rotation={[0, 0, 0]}
+                        scale={0.07+state.size2Cordinate}
+                        map={logoTexture2}
+                        map-anisotropy={16}
+                        depthTest={false}
+                        depthWrite={true}
+                    />
+                )}
+                {snap.fixed3 && (
+                    <Decal
+                        position={[0+state.x3Cordinate, 0+state.y3Cordinate, 0.15]}
+                        rotation={[0, 0, 0]}
+                        scale={0.07+state.size3Cordinate}
+                        map={logoTexture3}
+                        map-anisotropy={16}
+                        depthTest={false}
+                        depthWrite={true}
+                    />
+                )}
+                {snap.fixed4 && (
+                    <Decal
+                        position={[0+state.x4Cordinate, 0+state.y4Cordinate, 0.15]}
+                        rotation={[0, 0, 0]}
+                        scale={0.07+state.size4Cordinate}
+                        map={logoTexture4}
+                        map-anisotropy={16}
+                        depthTest={false}
+                        depthWrite={true}
+                    />
+                )}
                 {snap.isFullTexture && (
                     <Decal
                         position={[0, 0, 0]}
