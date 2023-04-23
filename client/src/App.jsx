@@ -5,11 +5,8 @@ import wood from "./assets/wood.jpg";
 function App() {
   return (
     <main className="app transition-all ease-in" style={{backgroundImage:`url(${wood})`}}>
-      
-
-       
       <header>
-        <nav class=" border-gray-200 px-6 lg:px-6 py-4   bg-gray-800 bg-opacity-50 backdrop-blur-sm ">
+        <nav class=" border-gray-200 px-6 lg:px-6 py-4   bg-gray-800 bg-opacity-50 backdrop-blur-sm " id="navbar">
           <div class="flex flex-wrap justify-center items-center mx-auto max-w-screen-xl">
             <a href="https://flowbite.com" class="flex items-center">
               

@@ -25,19 +25,17 @@ const Home = () => {
              
             <motion.div
               {...headContentAnimation}
-              className="flex flex-col gap-5"
+              className="flex flex-col gap-2"
             >
-              <p className="max-w-md text-2xl font-normal text-orange-50 ">
-                Create your unique ans exclusive shirt with our brand-new 3D
-                customization tool. <strong>Unleash your imagination</strong>{" "}
-                and define your own style.
+              <p className="max-w-md text-xl font-normal text-orange-50 ">
+              Experience the ultimate in personalization with our brand-new 3D customization tool. Take your creativity to the next level and bring your unique style to life with a one-of-a-kind shirt that reflects your personality
               </p>
               
               <CustomButton
-              type="filled"
+              type="fixed"
               title="Customize It"
-              handleClick={()=> state.intro=false}
-              customStyles="w-fit px-4 py-2.5 font-bold text-sm"
+              handleClick={()=> {state.intro=false;}}
+              customStyles=" text-orange-50 w-fit px-4 py-2.5  font-bold text-sm "
               />
             </motion.div>
           </motion.div>

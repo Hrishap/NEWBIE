@@ -21,7 +21,7 @@ const CustomButton = ({type,title,customStyles,handleClick}) => {
           return{
             borderWidth: '3px',
             borderColor: '#EFBD48',
-            color: 'white',
+            color: 'text-orange-50',
           }
         }
           // else if(type=== "specific"){
