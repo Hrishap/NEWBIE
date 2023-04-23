@@ -20,15 +20,15 @@ html {
 }
 
 .home {
-  @apply w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-16 absolute z-10;
+  @apply w-fit xl:h-full flex xl:justify-center  items-start flex-col xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-16 absolute z-10;
 }
 
 .home-content {
-  @apply flex-1 xl:justify-center justify-start flex flex-col gap-16;
+  @apply flex-1 xl:justify-center flex flex-col gap-5 py-16;
 }
 
 .head-text {
-  @apply xl:text-[6rem] text-[4rem] xl:leading-[8rem] leading-[5rem]   py-16 font-black  text-orange-50;
+  @apply xl:text-[6rem] text-[4rem] xl:leading-[8rem] leading-[5rem]   py-10 font-black  text-orange-50;
   
 }
 
@@ -41,7 +41,11 @@ html {
 }
 
 .filtertabs-container {
-  @apply absolute z-10 bottom-72 -right-0 pr-3  flex justify-center items-center flex-col gap-4;
+  @apply absolute z-10 bottom-52 -right-0 pr-3  flex justify-center items-center flex-col gap-4;
+}
+
+.edittabs-container {
+  @apply absolute z-10 bottom-5 -right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4;
 }
 
 .aipicker-container {

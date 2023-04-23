@@ -12,8 +12,10 @@ import { leftArrow } from "../assets";
 import { rightArrow } from "../assets";
 import { plus } from "../assets";
 import { minus } from "../assets";
+
 import { save } from "../assets";
 import { undo } from "../assets";
+
 import { downloadCanvasToImage, reader } from "../config/helpers";
 import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
 import closeImage from "../assets/close.png";
@@ -256,6 +258,7 @@ alert(error)
                 className='w-3/5 h-3/5 object-contain'
               />
             </button>
+
             <button className='download-btn' onClick={()=>{
               if(state.noOfSaved===0){
                 state.fixed1=true;
@@ -331,6 +334,7 @@ alert(error)
                 className='w-3/5 h-3/5 object-contain'
               />
             </button>
+
 
 
           </motion.div>
