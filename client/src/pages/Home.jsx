@@ -12,7 +12,7 @@ const Home = () => {
   const snap = useSnapshot(state);
   return (
     <AnimatePresence>
-      {snap.intro && (
+      {snap.intro===0 && (
         <motion.section className="home" {...slideAnimation("left")}>
       
           <motion.div className="'home-content" {...headContainerAnimation}>
@@ -34,7 +34,7 @@ const Home = () => {
               <CustomButton
               type="fixed"
               title="Customize It"
-              handleClick={()=> {state.intro=false;}}
+              handleClick={()=> {state.intro=1;}}
               customStyles=" text-orange-50 w-fit px-4 py-2.5  font-bold text-sm "
               />
             </motion.div>

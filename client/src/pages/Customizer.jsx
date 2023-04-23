@@ -144,7 +144,7 @@ alert(error)
   }
   return (
     <AnimatePresence>
-      {!snap.intro && (
+      {snap.intro===1 && (
         <>
           <motion.div
             key="custom"
@@ -166,14 +166,26 @@ alert(error)
           </motion.div>
 
           <motion.div
-            className="absolute z-10 top-5 right-5"
+            className="absolute z-10 top-5 left-5 -translate-y-2"
             {...fadeAnimation}
           >
             <CustomButton
               type="fixed"
               title="Go Back"
-              handleClick={() => state.intro = true}
-              customStyles="W-fit px-4 py-2.5 font-bold text-sm"
+              handleClick={() => state.intro = 0}
+              customStyles="W-fit px-4 py-2.5 font-bold text-sm text-white"
+            />
+          </motion.div>
+
+          <motion.div
+            className="absolute z-10 top-5 right-5 -translate-y-2"
+            {...fadeAnimation}
+          >
+            <CustomButton
+              type="fixed"
+              title="Buy"
+              handleClick={() => state.intro = 2}
+              customStyles="W-fit px-4 py-2.5 font-bold text-sm text-white"
             />
           </motion.div>
 
@@ -203,13 +215,7 @@ alert(error)
                 className='w-3/5 h-3/5 object-contain'
               />
             </button>
-            <button className='download-btn' onClick={downloadCanvasToImage}>
-              <img
-                src={download}
-                alt='download_image'
-                className='w-3/5 h-3/5 object-contain'
-              />
-            </button>
+
           </motion.div>
 
           
@@ -240,6 +246,13 @@ alert(error)
             <button className='download-btn' onClick={()=>{state.xCordinate+=0.001}}>
               <img
                 src={rightArrow}
+                alt='download_image'
+                className='w-3/5 h-3/5 object-contain'
+              />
+            </button>
+            <button className='download-btn' onClick={downloadCanvasToImage}>
+              <img
+                src={download}
                 alt='download_image'
                 className='w-3/5 h-3/5 object-contain'
               />

@@ -2,6 +2,7 @@ import Canvas from "./canvas";
 import Customizer from "./pages/Customizer";
 import Home from "./pages/Home";
 import wood from "./assets/wood.jpg";
+import Ecommerce from "./pages/Ecommerce";
 function App() {
   return (
     <main className="app transition-all ease-in" style={{backgroundImage:`url(${wood})`}}>
@@ -21,6 +22,7 @@ function App() {
           </div>
         </nav>
       </header>
+      <Ecommerce />
       <Home />
       <Canvas />
       <Customizer />
