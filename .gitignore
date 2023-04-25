@@ -2,7 +2,6 @@ node_modules
 .env
 .eslintrc.cjs
 package-lock.json
-package.json
 tailwind.config.js
 vite.config.js
 postcss.config.js
