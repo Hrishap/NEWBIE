@@ -1,5 +1,16 @@
 # NEWBIE
 ## NAME --> De'ZIGN' IT.
+###NOTICE
+according to policy of OPENAI API KEY GENERATION it is stated that:
+ "In order to protect the security of your account, OpenAI may also automatically rotate any API key that we've found has leaked publicly."
+ So the api key provided in project may not work so in order to make ai-bot work few steps must be performed:
+ 1)visit site:    https://platform.openai.com/account/api-keys and login.
+ 2)Click on create new secret key and copy to clipboard
+ ![Screenshot (204)](https://user-images.githubusercontent.com/121787992/234216204-24afc842-414b-441e-9cba-91daaef7c4ac.png)
+3)change the value of variable OPENAI_API_KEY IN .env file.
+4)get inside the server folder in vs code and run npm start in terminal this must come in terminal as output
+![Screenshot (205)](https://user-images.githubusercontent.com/121787992/234216889-b6197e72-7ba7-43d4-8f09-d1a62f97dfec.png)
+
 BASIC IDEA : EXPERIENCE THE ULTIMATE IN PERSONALIZATION WITH OUR BRAND NEW 3D CUSTOMISATION TOOL.
              TAKE YOUR CREATIVITY TO THE NEXT LEVEL AND BRING YOUR UNIQUE STYLE TO LIFE WITH OUR ONE-OF-A-KIND SHIRT THAT REFLECTS YOUR PERSONALITY.
              SO WHY SETTLE FOR A GENERIC SHIRT WHEN YOU CAN DEFINE YOUR OWN STYLE? START CREATING TODAY WITH OUR 3D CUSTOMISATION TOOL,
